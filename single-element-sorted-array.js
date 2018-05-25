@@ -11,3 +11,5 @@ var singleNonDuplicate = function(nums) {
     
     return xor
 };
+
+console.log(singleNonDuplicate([4, 1, 2, 1, 2]))
