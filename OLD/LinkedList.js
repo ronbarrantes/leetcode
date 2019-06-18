@@ -1,9 +1,9 @@
 function ListNode(val) {
-  this.val = val;
-  this.next = null;
+  this.val = val
+  this.next = null
 }
 
-ListNode.prototype.print = function () {
+ListNode.prototype.print = function() {
   let arr = []
   let node = this
   while (node) {
@@ -14,7 +14,7 @@ ListNode.prototype.print = function () {
   return arr
 }
 
-ListNode.prototype.append = function (num) {
+ListNode.prototype.append = function(num) {
   let node = this
 
   if (node.val === undefined) {
@@ -30,7 +30,7 @@ ListNode.prototype.append = function (num) {
   return node
 }
 
-ListNode.prototype.mock = function (...nums) {
+ListNode.prototype.mock = function(...nums) {
   let arr = nums.length ? [...nums] : [1, 2, 3, 4, 5]
   arr.forEach(num => this.append(num))
   return this

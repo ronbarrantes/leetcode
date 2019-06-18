@@ -1,4 +1,4 @@
-var plusOne = function (digits) {
+var plusOne = function(digits) {
   let carry = 0
   let i = digits.length - 1
 
@@ -24,7 +24,7 @@ var plusOne = function (digits) {
   }
 
   return digits
-};
+}
 
 let nums = [1, 2, 3]
 console.log(plusOne(nums), 'Expect [1,2,4]')

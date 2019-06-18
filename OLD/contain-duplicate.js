@@ -1,4 +1,4 @@
-var containsDuplicate = function (nums) {
+var containsDuplicate = function(nums) {
   let hash = {}
 
   if (nums.length === 0) {
@@ -18,7 +18,7 @@ var containsDuplicate = function (nums) {
       return false
     }
   }
-};
+}
 
 
 let arr1 = [2, 1, 2, 4, 1]

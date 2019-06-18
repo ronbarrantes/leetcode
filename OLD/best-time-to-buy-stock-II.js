@@ -1,10 +1,10 @@
-var maxProfit = function (prices) {
+var maxProfit = function(prices) {
   let profit = 0
   let buy = null
   let sell = null
   for (let i = 0; i < prices.length; i++) {
 
-    // when to buy 
+    // when to buy
     if (prices[i] < prices[i + 1] && buy === null) {
       buy = prices[i]
     }
@@ -26,17 +26,17 @@ var maxProfit = function (prices) {
   }
 
   return profit
-};
+}
 
-var maxProfit2 = function (prices) {
-  let max = 0;
+var maxProfit2 = function(prices) {
+  let max = 0
   for (let i = 1; i < prices.length; i++) {
     if (prices[i] > prices[i - 1]) {
-      max += prices[i] - prices[i - 1];
+      max += prices[i] - prices[i - 1]
     }
   }
-  return max;
-};
+  return max
+}
 
 
 let price1 = [7, 1, 4, 5, 3, 6, 4]

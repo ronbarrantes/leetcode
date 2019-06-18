@@ -1,4 +1,4 @@
-var myAtoi = function (str) {
+var myAtoi = function(str) {
   console.log ('MAIN STRING -->', str)
 
   let newString = ''
@@ -25,7 +25,7 @@ var myAtoi = function (str) {
 
   // return result
   return result
-};
+}
 
 
 let input1 = '42' // expect 42
@@ -34,7 +34,7 @@ let input3 = '4193 with words' // expect 4193
 let input5 = '-91283472332' // -2147483648
 let input4 = 'words and 987' // expect 0
 let input6 = '.42' // -2147483648
-let input7 = '+' // 
+let input7 = '+' //
 let input8 = '3.14'
 let input9 = '-'
 let input10 = '/'

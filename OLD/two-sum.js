@@ -1,4 +1,4 @@
-var twoSum = function (nums, target) {
+var twoSum = function(nums, target) {
   let hash = {}
   let i = 0
 
@@ -12,7 +12,7 @@ var twoSum = function (nums, target) {
     hash[target - nums[i]] = i
     i++
   }
-};
+}
 
 console.log(twoSum([3, 6, 11, 15], 9), 'Expect [0, 1]')
 
