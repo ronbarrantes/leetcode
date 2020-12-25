@@ -162,3 +162,5 @@ tags
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/git,node,vscode,vim,typings
+
+/out
