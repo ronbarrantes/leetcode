@@ -9,7 +9,7 @@ var myAtoi = function(str) {
     if (str[i].search(/[0-9- ]/) === -1)
       insertNumber = false
 
-    if (str[i].search(/[0-9-\+]/) !== -1 && insertNumber)
+    if (str[i].search(/[0-9-+]/) !== -1 && insertNumber)
       newString += str[i]
   }
 
