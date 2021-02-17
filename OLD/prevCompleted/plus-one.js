@@ -1,29 +1,29 @@
 var plusOne = function(digits) {
-  let carry = 0
-  let i = digits.length - 1
+    let carry = 0
+    let i = digits.length - 1
 
-  while (i >= 0) {
+    while (i >= 0) {
 
-    if (digits[i] < 9) {
-      digits[i] += 1
-      break
-    }
+        if (digits[i] < 9) {
+            digits[i] += 1
+            break
+        }
 
     // if the number is 9
-    if (digits[i] >= 9) {
-      carry = 1
-      digits[i] = 0
-    }
+        if (digits[i] >= 9) {
+            carry = 1
+            digits[i] = 0
+        }
 
     // if end of the array
-    if (carry > 0 && i === 0) {
-      digits.unshift(carry)
-      break
+        if (carry > 0 && i === 0) {
+            digits.unshift(carry)
+            break
+        }
+        i--
     }
-    i--
-  }
 
-  return digits
+    return digits
 }
 
 let nums = [1, 2, 3]
