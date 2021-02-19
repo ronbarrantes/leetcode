@@ -19,7 +19,9 @@
     "object-curly-spacing":["warn", "always"],
     "no-console": "off",
     "no-unused-vars": "off",
-    "indent": ["error", 4, { "SwitchCase": 1, "ignoreComments": true }],    
+    // "indent": ["error", 4, { "SwitchCase": 1, "ignoreComments": true }],
+    "indent": ["error", "tab", { "SwitchCase": 1, "ignoreComments": true }],
+
     "switch-colon-spacing": ["error", 
       { "after": true, "before": false }
       ],
