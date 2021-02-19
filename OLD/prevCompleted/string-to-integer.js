@@ -1,30 +1,30 @@
 var myAtoi = function(str) {
-    console.log ('MAIN STRING -->', str)
+	console.log ('MAIN STRING -->', str)
 
-    let newString = ''
-    let result = 0
-    let insertNumber = true
+	let newString = ''
+	let result = 0
+	let insertNumber = true
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i].search(/[0-9- ]/) === -1)
-            insertNumber = false
+	for (let i = 0; i < str.length; i++) {
+		if (str[i].search(/[0-9- ]/) === -1)
+			insertNumber = false
 
-        if (str[i].search(/[0-9-+]/) !== -1 && insertNumber)
-            newString += str[i]
-    }
+		if (str[i].search(/[0-9-+]/) !== -1 && insertNumber)
+			newString += str[i]
+	}
 
-    if (typeof Number(newString) === 'number' && newString !== '-')
-        result = Number(newString)
+	if (typeof Number(newString) === 'number' && newString !== '-')
+		result = Number(newString)
 
   // check the string is within range
-    if (result > 2 ** 31 - 1)
-        return 2 ** 31 - 1
+	if (result > 2 ** 31 - 1)
+		return 2 ** 31 - 1
 
-    if (result < -(2 ** 31))
-        return -(2 ** 31)
+	if (result < -(2 ** 31))
+		return -(2 ** 31)
 
   // return result
-    return result
+	return result
 }
 
 let input1 = '42' // expect 42
