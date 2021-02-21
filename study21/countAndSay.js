@@ -16,7 +16,6 @@ const helper = (val) => {
 		}
 	}
 
-	console.log(times)
 	return result
 }
 
@@ -24,7 +23,7 @@ var countAndSay = function(n) {
 	let tempVal = ''
 	let currVal = '1'
 
-	for(let i = 1; i <= n; i++){
+	for(let i = 1; i < n; i++){
 		tempVal = helper(currVal)
 		currVal = tempVal
 		tempVal = ''
