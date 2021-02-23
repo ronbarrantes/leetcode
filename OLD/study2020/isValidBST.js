@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 
 const validate = (list) => {
 	for(let i = 0; i < list.length - 1; i++){
