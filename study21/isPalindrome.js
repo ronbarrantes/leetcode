@@ -19,7 +19,6 @@ var isPalindrome = function(s) {
 	return true
 }
 
-
 // console.log('Resolve true', isPalindrome('A man, a plan, a canal: Panama'))
 // console.log('Resolve false', isPalindrome('rat'))
 // console.log('Resolve true', isPalindrome('d'))
