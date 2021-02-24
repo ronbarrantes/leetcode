@@ -1,18 +1,14 @@
-class ListNode {
-	constructor(val) {
-		this.val = val || undefined
-	}
-}
+const BaseNode = require('./BaseNode')
 
-class LinkedList extends ListNode{
+class LinkedList extends BaseNode{
 	constructor(val, next) {
 		super(val)
-		this.next = next || null
+		this.next = next === undefined ? null : next
 	}
 
 	/**
 	 *
-	 * @param vals A value or values to be passed to the ListNode
+	 * @param vals A value or values to be passed to the LinkedList
 	 */
 	append(...vals){
 		if(vals.length === 0){
