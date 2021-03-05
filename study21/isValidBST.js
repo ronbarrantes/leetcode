@@ -21,7 +21,7 @@ const traverse = (root, low = -Infinity, high = Infinity) => {
 		return false
 	}
 
-	return traverse(root.left, root.val, high) && traverse(root.right, low, root.val)
+	return traverse(root.right, root.val, high) && traverse(root.left, low, root.val)
 }
 
 var isValidBST = function(root) {
