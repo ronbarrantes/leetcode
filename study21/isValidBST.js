@@ -11,9 +11,9 @@
  * @return {boolean}
  */
 
-/// SOLUTION INTERVIWER PROBABLY WANTS
+const trees = require('../dummyData/BSTs')
 
-const traverse = (root, low = -Infinity, high = Infinity) => {
+const validate = (root, low = -Infinity, high = Infinity) => {
 	if(!root)
 		return true
 
@@ -21,9 +21,12 @@ const traverse = (root, low = -Infinity, high = Infinity) => {
 		return false
 	}
 
-	return traverse(root.right, root.val, high) && traverse(root.left, low, root.val)
+	return validate(root.right, root.val, high) && validate(root.left, low, root.val)
 }
 
 var isValidBST = function(root) {
-	return traverse(root)
+	return validate(root)
 }
+
+console.log('Should be true', isValidBST(trees.smallValidBST))
+console.log('Should be false', isValidBST(trees.smallTree))
