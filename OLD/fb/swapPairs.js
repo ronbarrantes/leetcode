@@ -21,8 +21,6 @@ const pairs = {
 }
 
 var swapPairs = function(head) {
-    r
-
     if (!head || !head.next)
         return head
 
