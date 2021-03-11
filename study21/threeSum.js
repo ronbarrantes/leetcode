@@ -65,10 +65,6 @@ const a = [-1, 0, 1, 2, -1, -4]
 const b = [0, 0, 0, 0]
 const c = [-2, 0, 1, 1, 2]
 
-threeSum(a) //?
-threeSum(b) //?
-threeSum(c) //?
-
-
-assert.deepStrictEqual(threeSum(a), [[-1, -1, 2], [-1, 0, 1]], `They're not equal`)
-
+// assert.deepStrictEqual(threeSum(a), [[-1, -1, 2], [-1, 0, 1]], `They're not equal`)
+// assert.deepStrictEqual(threeSum(b), [[0, 0, 0]], 'Need all zeros')
+assert.deepStrictEqual(threeSum(c), [[-2, 0, 2], [-2, 1, 1]], 'Is not right')
