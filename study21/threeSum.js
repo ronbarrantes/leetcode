@@ -47,12 +47,16 @@ const a = [-1, 0, 1, 2, -1, -4]
 const b = [0, 0, 0, 0]
 const c = [-2, 0, 1, 1, 2]
 const d = [0, 0]
+const e = [-2, 0, 0, 2, 2]
 
-threeSum(a) //?
-threeSum(b) //?
-threeSum(c) //?
-threeSum(d) //?
+const tsA = threeSum(a) //?
+const tsB = threeSum(b) //?
+const tsC = threeSum(c) //?
+const tsD = threeSum(d) //?
+const tsE = threeSum(e)
 
-assert.deepStrictEqual(threeSum(a), [[-1, -1, 2], [-1, 0, 1]], `They're not equal`)
-assert.deepStrictEqual(threeSum(b), [[0, 0, 0]], 'Need all zeros')
-assert.deepStrictEqual(threeSum(c), [[-2, 0, 2], [-2, 1, 1]], 'Is not right')
+assert.deepStrictEqual(tsA, [[-1, -1, 2], [-1, 0, 1]], `They're not equal`)
+assert.deepStrictEqual(tsB, [[0, 0, 0]], 'Need all zeros')
+assert.deepStrictEqual(tsC, [[-2, 0, 2], [-2, 1, 1]], 'Is not right')
+assert.deepStrictEqual(tsD, [], 'Should have nothing')
+assert.deepEqual(tsE, [[-2, 0, 2]], 'Only one answer')
