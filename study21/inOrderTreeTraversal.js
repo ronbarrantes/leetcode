@@ -2,6 +2,23 @@ const tree = require('../dummyData/BSTs').inOrderTree//.inOrderTree
 
 const arr = []
 
+const addSpaces = (num) => {
+	let space = ''
+	for(let i = 0; i < num; i++){
+		space += ' '
+	}
+	return space
+}
+
+const traversal = (node, level = 0) => {
+	if(!node)
+		return null
+
+	traversal(node.left, level + 1)
+	console.log(addSpaces(level * 3), node.val)
+	traversal(node.right, level + 1)
+}
+
 const inOrderTraversal = (root) => {
 	if (!root)
 		return null
@@ -29,6 +46,8 @@ const inOrderTraversal = (root) => {
 		}
 	}
 }
+
+traversal(tree)
 
 inOrderTraversal(tree)
 
