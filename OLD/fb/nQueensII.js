@@ -40,4 +40,4 @@ var totalNQueens = function(n) {
     return solution
 }
 
-console.log(totalNQueens(8))
+console.log(totalNQueens(4))

@@ -8,25 +8,26 @@ const { longAssAddition, shortAddition } = require('../dummyData/longAssAddition
 const processMulti = (numArr, signArr) => {
 	const additionArr = []
 	additionArr.push(numArr.shift())
+	let i = 0
 
-	while(numArr.length > 0){
-		const sign = signArr.shift()
-		const num = numArr.shift()
-
+	while(i < numArr.length){
+		const sign = signArr[i]
+		const num = numArr[i]
         // if multi/div
 		if(/[*/]/.test(sign)){
-			let temp = additionArr.pop()
+			const idx = additionArr.length - 1
+			let temp = additionArr[idx]
 			if(/\*/.test(sign))
-				additionArr.push(temp * num)
+				additionArr[idx] = temp * num
 			if(/\//.test(sign))
-				additionArr.push(Math.floor(temp/num))
+				additionArr[idx] = Math.floor(temp/num)
 		}
-
         // if add/sub
 		if(/[+-]/.test(sign)){
 			additionArr.push(sign)
 			additionArr.push(num)
 		}
+		i++
 	}
 
 	return additionArr
@@ -48,27 +49,15 @@ const processAdditions = (arr) => {
 	return result
 }
 
-const separating = 'SEPARATING'
-const multi = 'MULTI'
-const addition = 'ADDITION'
-
 var calculate = function(s) {
-
-	console.time(separating)
 	let numArr = s.match(/[\d]+/g).map(chr => +chr)
 	let signArr = s.match(/[+\-*/]/g)
-	console.timeEnd(separating)
 
-// PROCESS PRODUCTS
-	console.time(multi)
+	// PROCESS PRODUCTS
 	const additionArr = processMulti(numArr, signArr)
-	console.timeEnd(multi)
 
     // PROCESS ADDITIONS
-	console.time(addition)
 	const result = processAdditions(additionArr)
-	console.timeEnd(addition)
-
 	return result
 }
 

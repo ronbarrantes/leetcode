@@ -27,8 +27,8 @@ var multiply = function(num1, num2) {
 	return productArr.reverse().join('')
 }
 
-const num1 = '1001'
-const num2 = '454'
+const num1 = '230'
+const num2 = '330'
 
 const sol1 = (+num1 * +num2).toString()
 

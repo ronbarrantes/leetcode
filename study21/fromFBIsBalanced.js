@@ -17,11 +17,11 @@ function isBalanced(s) {
 }
 
 var s1 = '{[(])}'
-var expected1 = false
+var expected1 = true
 var output1 = isBalanced(s1)
 test(s1, output1, expected1)
 
 var s2 = '{{[[(())]]}}'
-var expected2 = false
+var expected2 = true
 var output2 = isBalanced(s2)
 test(s2, output2, expected2)
