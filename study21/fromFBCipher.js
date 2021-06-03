@@ -1,4 +1,4 @@
-const { basicTest: test } = require('../utils/basicTest')
+const { basicTest: test } = require('../utils/basicUtils')
 
 const shiftBy = (num, factor, lo, hi) => {
 	const l = lo.charCodeAt()

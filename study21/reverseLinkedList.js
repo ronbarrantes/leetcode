@@ -1,5 +1,5 @@
 const assert = require('assert')
-const llUtil = require('../utils/linkedList')
+const { printLinkedList: printList } = require('../utils/basicUtils')
 const LinkedList = require('../DataStructures/LinkedList')
 
 var reverseList = function(head) {
@@ -17,4 +17,4 @@ const testArr = [1, 2, 3, 4, 5, 6]
 listNode.append(...testArr)
 
 const prettyReverse = reverseList(listNode)
-assert.deepStrictEqual(llUtil.print(prettyReverse), testArr.reverse(), 'Has a different val')
+assert.deepStrictEqual(printList(prettyReverse), testArr.reverse(), 'Has a different val')

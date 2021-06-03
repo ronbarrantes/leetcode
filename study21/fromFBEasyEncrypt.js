@@ -1,4 +1,4 @@
-const { basicTest: test } = require('../utils/basicTest')
+const { basicTest: test } = require('../utils/basicUtils')
 
 const encrypt = (arr) => {
 	if(arr.length<=1){

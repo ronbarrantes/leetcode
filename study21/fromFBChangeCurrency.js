@@ -1,4 +1,4 @@
-const { basicTest: test } = require('../utils/basicTest')
+const { basicTest: test } = require('../utils/basicUtils')
 
 // Add any extra import statements you may need here
 const change = (target, denoms, currSum = 0) => {

@@ -1,4 +1,4 @@
-const { basicTest: test } = require('../utils/basicTest')
+const { basicTest: test } = require('../utils/basicUtils')
 
 function isBalanced(s) {
 	const stack = []
