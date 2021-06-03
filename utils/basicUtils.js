@@ -25,7 +25,7 @@ const printLinkedList = function(list) {
 	return arr
 }
 
-let testNum = 1 // for the basic test
+let testNum = 1 // Creates a closure for the basicTest
 /**
  * Logs a basic test with an input, an output and what's expected
  * @param input Raw input with no modifications
