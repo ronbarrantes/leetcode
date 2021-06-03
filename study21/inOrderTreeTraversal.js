@@ -1,14 +1,7 @@
 const tree = require('../dummyData/BSTs').inOrderTree//.inOrderTree
+const { addSpaces } = require('../utils/basicUtils')
 
 const arr = []
-
-const addSpaces = (num) => {
-	let space = ''
-	for(let i = 0; i < num; i++){
-		space += ' '
-	}
-	return space
-}
 
 const traversal = (node, level = 0) => {
 	if(!node)
