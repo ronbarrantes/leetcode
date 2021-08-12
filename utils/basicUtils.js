@@ -1,3 +1,5 @@
+const BinaryTree = require('../DataStructures/BinaryTree')
+
 /**
  * Add a number of spaces as a string
  * @param num The number of spaces to be added
@@ -45,4 +47,51 @@ const basicTest = (input, output, expected) => {
 	testNum++
 }
 
-module.exports = { addSpaces, printLinkedList, basicTest }
+/**
+ * Takes an array and converts it into a tree
+ * @param arr that represents the tree by level (Breadth First)
+ *
+ * (Visit the link below for more info)
+ * @link https://leetcode.com/problems/recover-binary-search-tree/discuss/32539/Tree-Deserializer-and-Visualizer-for-Python
+ */
+const deserializeTree = (arr) => {
+	if (arr.length === 0) return null
+
+	const nodes = arr.map(node => {
+		if(node === null)
+			return null
+		else
+			return new BinaryTree(node)
+	})
+
+	const kids = [...nodes].reverse()
+	let root = kids.pop()
+
+	for(const node of nodes){
+		if(node){
+			if(kids.length > 0)
+				node.left = kids.pop()
+			if(kids.length > 0)
+				node.right = kids.pop()
+		}
+	}
+
+	return root
+}
+
+/**
+ * Adds a divider on the console
+ * @param string Adds a message
+ */
+const spacer = (message = null) => {
+	let space = ''
+	if(message) space += `\n${message}\n`
+	space += '-------------------------'
+	console.log(space)
+}
+
+module.exports = {
+	addSpaces, printLinkedList,
+	basicTest, deserializeTree,
+	spacer,
+}
