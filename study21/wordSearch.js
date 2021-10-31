@@ -6,7 +6,6 @@
 var exist = function(board, word) {
 	let isValid = false
 
-
 	let counter = 0
 	// THINGS THAT NEED TO HAPPEN
 	// CHANGE THE GRID TO PUT A * FOR IF VISITED (PUT BACK THE LETTER IF HAVE TO RETRACT)
@@ -35,12 +34,10 @@ var exist = function(board, word) {
 		// the next letter is the same letter as the word's next letter
 		// and it hasn't been visited
 
-
 		const currLetter = board[row][col]
 		board[row][col] = '*'
-		
-		// top
 
+		// top
 
 		if(
 			row >= 0 &&
@@ -67,7 +64,6 @@ var exist = function(board, word) {
 			console.log('GOING BOTTOM v')
 			explore(row+1, col, idx + 1)
 
-
 		}
 
 		// left
@@ -78,10 +74,8 @@ var exist = function(board, word) {
 			board[row][col - 1] !== '*'
 		){
 
-
 			console.log('GOING LEFT <')
 			explore(row, col - 1, idx + 1)
-
 
 		}
 
@@ -100,8 +94,6 @@ var exist = function(board, word) {
 
 		board[row][col] = currLetter
 
-
-
 		console.log('TIMES RAN:', counter)
 	}
 
@@ -109,13 +101,11 @@ var exist = function(board, word) {
 
 	const wordCheckerMap = new Map()
 
-
 	word.split('').map(letter => {
 		wordCheckerMap.has(letter) ?
 			wordCheckerMap.set(letter, wordCheckerMap.get(letter) + 1):
 			wordCheckerMap.set(letter, 1)
 	})
-
 
 	for(let row = 0; row < board.length; row++){
 		for(let col = 0; col < board[0].length; col++){
@@ -133,12 +123,8 @@ var exist = function(board, word) {
 		}
 	}
 
-
 	if(wordCheckerMap.size !== 0)
 		return false
-
-
-
 
 	// TRAVERSY LOOP
 	for(let row = 0; row < board.length; row++){
@@ -162,7 +148,6 @@ var exist = function(board, word) {
 
 	return isValid
 }
-
 
 // [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
 // "ABCCED"
