@@ -5,14 +5,14 @@
 
 const calculation = (currCalc, sVal, sign) => {
 	switch(sign){
-		case '+':
-			currCalc += +sVal
-			break
-		case '-':
-			currCalc -= +sVal
-			break
-		default:
-			break
+	case '+':
+		currCalc += +sVal
+		break
+	case '-':
+		currCalc -= +sVal
+		break
+	default:
+		break
 	}
 
 	return currCalc
@@ -60,7 +60,7 @@ var calculate = function(s) {
 
 	return helper(s)
 }
-					/// 0123456789
+/// 0123456789
 const ans1 = calculate('- (3 + (4 + 5))')
 
 console.log('CALCULATION OF', ans1, 'SHOULD BE', (1+(4+5+2)-3)+(6+8))

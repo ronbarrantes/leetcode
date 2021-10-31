@@ -44,15 +44,15 @@ var accountsMerge = function(accounts) {
 	const result = []
 	let mergedInfo = new Map()
 
-    // ADD TO MAP
+	// ADD TO MAP
 	for(const account of accounts){
-        // split it
+		// split it
 		const name = account.splice(0, 1)[0]
 		mergedInfo = mergeInformation(name, account, mergedInfo)
-        // add to map
+		// add to map
 	}
 
-    // REDUCE TO ARRAY
+	// REDUCE TO ARRAY
 	for(const [name, accounts] of mergedInfo){
 		for(const [idx, emails] of accounts){
 			result.push(reduceInfo(name, emails))

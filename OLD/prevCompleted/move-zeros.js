@@ -14,7 +14,7 @@ var moveZeroes = function(nums) {
 			steps++
 		}
 
-    // if number is not 0
+		// if number is not 0
 		if (nums[i] !== 0){
 			i++
 		}

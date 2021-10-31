@@ -22,7 +22,7 @@ const hasBottomNeighbor = (picture, row, col) => {
 var findLonelyPixel = function(picture) {
 	let counter = 0
 
-    // MEAT AND POTATOES
+	// MEAT AND POTATOES
 	for(let row = 0; row < picture.length; row++){
 		let pixelCounter = 0
 
@@ -30,7 +30,7 @@ var findLonelyPixel = function(picture) {
 			if(picture[row][col] === 'B'){
 				pixelCounter++
 
-                // check if other pixels and neighbors
+				// check if other pixels and neighbors
 				if(pixelCounter === 2){
 					break
 				}

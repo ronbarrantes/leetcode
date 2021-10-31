@@ -41,10 +41,10 @@ const operation = (arr) => {
 }
 
 const calculator = (str) => {
-    // get the numbers and signs
+	// get the numbers and signs
 	const splitted = split(str)
 
-    // add and multiply the stuff
+	// add and multiply the stuff
 	return operation(splitted)
 }
 

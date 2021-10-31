@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var isValidSudoku = function(board) {
-  // horizontal sweep
+	// horizontal sweep
 	let valid = true
 
 	for (let i = 0; i < board.length; i++) {
@@ -18,9 +18,9 @@ var isValidSudoku = function(board) {
 			})
 	}
 
-  // vertical sweep
+	// vertical sweep
 
-  // square sweep
+	// square sweep
 
 	return valid
 }

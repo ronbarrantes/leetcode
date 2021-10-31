@@ -3,7 +3,7 @@
  * @return {number}
  */
 
- // -231 <= x <= 231 - 1
+// -231 <= x <= 231 - 1
 
 const isInRange = (num) => {
 	if(-(2 ** 31) > num || num > (2 ** 31) - 1)

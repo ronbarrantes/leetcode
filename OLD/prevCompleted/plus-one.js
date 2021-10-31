@@ -9,13 +9,13 @@ var plusOne = function(digits) {
 			break
 		}
 
-    // if the number is 9
+		// if the number is 9
 		if (digits[i] >= 9) {
 			carry = 1
 			digits[i] = 0
 		}
 
-    // if end of the array
+		// if end of the array
 		if (carry > 0 && i === 0) {
 			digits.unshift(carry)
 			break

@@ -13,7 +13,7 @@ const processMulti = (numArr, signArr) => {
 	while(i < numArr.length){
 		const sign = signArr[i]
 		const num = numArr[i]
-        // if multi/div
+		// if multi/div
 		if(/[*/]/.test(sign)){
 			const idx = additionArr.length - 1
 			let temp = additionArr[idx]
@@ -22,7 +22,7 @@ const processMulti = (numArr, signArr) => {
 			if(/\//.test(sign))
 				additionArr[idx] = Math.floor(temp/num)
 		}
-        // if add/sub
+		// if add/sub
 		if(/[+-]/.test(sign)){
 			additionArr.push(sign)
 			additionArr.push(num)
@@ -56,7 +56,7 @@ var calculate = function(s) {
 	// PROCESS PRODUCTS
 	const additionArr = processMulti(numArr, signArr)
 
-    // PROCESS ADDITIONS
+	// PROCESS ADDITIONS
 	const result = processAdditions(additionArr)
 	return result
 }

@@ -7,7 +7,7 @@ const change = (target, denoms, currSum = 0) => {
 	}
 
 	for(let i = denoms.length -1; i >= 0; i--){
-// choose
+		// choose
 		const tempDenom = denoms.splice(i, 1)[0]
 
 		while(currSum + tempDenom < target){
@@ -16,11 +16,11 @@ const change = (target, denoms, currSum = 0) => {
 
 		if(currSum + tempDenom === target)
 			return true
-// explore
+		// explore
 
 		const isTrue = change(target, denoms, currSum)
 		if(isTrue) return true
-// unchoose
+		// unchoose
 		denoms.splice(i, 0, tempDenom)
 	}
 

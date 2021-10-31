@@ -11,10 +11,10 @@ var reverse = function(x) {
 		x *= -1
 	}
 
-  //turn x to string
+	//turn x to string
 	x = x.toString()
 
-  //reverse it
+	//reverse it
 	for (let i = x.length-1; i>=0; i--){
 		newVal += x[i]
 	}
@@ -23,7 +23,7 @@ var reverse = function(x) {
 		return 0
 	}
 
-  // turn newVal back to number
+	// turn newVal back to number
 	return parseInt(newVal) * checkVal
 }
 

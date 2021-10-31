@@ -39,7 +39,7 @@ var solveSudoku = function(board) {
 	for(let row = 0; row < 9; row++){
 		for(let col = 0; col < 9; col++){
 			// if is not '.'
-				// add numbers to the maps
+			// add numbers to the maps
 		}
 	}
 
@@ -49,14 +49,14 @@ var solveSudoku = function(board) {
 			for(let col = 0; col < 9; col++){
 				// STUFF
 				// if it's not a '.'
-					// loop over the numbers 1 through 9
-						// check if it's the number is a valid position
-							// if yes then put the number on the board
-							// recurse
-								// if the position of the of rows and columns is 9x9
-									// return everything and collapse the stack
-							// remove the number and switch it back to *
-					// return if it reaches 9 so it can backtrack
+				// loop over the numbers 1 through 9
+				// check if it's the number is a valid position
+				// if yes then put the number on the board
+				// recurse
+				// if the position of the of rows and columns is 9x9
+				// return everything and collapse the stack
+				// remove the number and switch it back to *
+				// return if it reaches 9 so it can backtrack
 			}
 		}
 

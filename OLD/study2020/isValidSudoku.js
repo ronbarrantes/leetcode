@@ -11,7 +11,7 @@ var isValidSudoku = function(board) {
 			if (board[r][c] !== '.'){
 				const val = board[r][c]
 				const sb = Math.floor(r/3) * 3 + Math.floor(c/3)
-        // populate rows
+				// populate rows
 
 				if(!row.has(r))
 					row.set(r, new Set([val]))
@@ -21,7 +21,7 @@ var isValidSudoku = function(board) {
 					row.get(r).add(val)
 				}
 
-        // populate columns
+				// populate columns
 				if(!column.has(c))
 					column.set(c, new Set([val]))
 				else{
@@ -30,7 +30,7 @@ var isValidSudoku = function(board) {
 					column.get(c).add(val)
 				}
 
-        // add subbox
+				// add subbox
 				if(!subBox.has(sb))
 					subBox.set(sb, new Set([val]))
 

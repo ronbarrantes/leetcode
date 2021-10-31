@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
 	let l = 0 // left pointer
 	let r = 0 // right pointer
 	let arr = []
-  // increase counter
+	// increase counter
 	while(r < s.length){
 		if (arr.includes(s[r])){
 			l++

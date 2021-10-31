@@ -10,22 +10,22 @@
 const assert = require('assert').strict
 
 function getMaxAdditionalDinersCount(N, K, M, S) {
-    // Write your code here
-    // arr of arrays
-    // count the groups that can happen in each array of arrays
-    // figure out the unions
-    // figure out how many groups can be done with each array
+	// Write your code here
+	// arr of arrays
+	// count the groups that can happen in each array of arrays
+	// figure out the unions
+	// figure out how many groups can be done with each array
 
-    //// N = total number of seats
-    //// K = number of seats in between
-    //// M = number of diners
-    //// S = array of the seats
+	//// N = total number of seats
+	//// K = number of seats in between
+	//// M = number of diners
+	//// S = array of the seats
 
 	let groups = []
 	const invalidSeats = new Set()
 	let lastTopEnd = 1
 
-    // add invalid seats to the set
+	// add invalid seats to the set
 
 	S = S.sort((a, b) => a - b) // n(log*n)
 
@@ -51,8 +51,8 @@ function getMaxAdditionalDinersCount(N, K, M, S) {
 	return 0
 }
 
-  // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-  //       [       ] [       |   ]
+// 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+//       [       ] [       |   ]
 
 const inputs = [
 	{
@@ -80,7 +80,7 @@ for(let i = 0; i < 1
 	// assert.strictEqual(output, ans)
 }
 
-   /*
+/*
 
        // for(const num of S){ // On*m
     //   const bottomEnd = num - K > 1 ? num - K : 1

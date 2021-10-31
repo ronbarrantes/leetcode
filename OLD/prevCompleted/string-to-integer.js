@@ -16,14 +16,14 @@ var myAtoi = function(str) {
 	if (typeof Number(newString) === 'number' && newString !== '-')
 		result = Number(newString)
 
-  // check the string is within range
+	// check the string is within range
 	if (result > 2 ** 31 - 1)
 		return 2 ** 31 - 1
 
 	if (result < -(2 ** 31))
 		return -(2 ** 31)
 
-  // return result
+	// return result
 	return result
 }
 

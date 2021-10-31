@@ -4,11 +4,11 @@ var maxProfit = function(prices) {
 	let sell = null
 	for (let i = 0; i < prices.length; i++) {
 
-    // when to buy
+		// when to buy
 		if (prices[i] < prices[i + 1] && buy === null) {
 			buy = prices[i]
 		}
-    // update sell
+		// update sell
 		if (i !== 0) {
 			sell = prices[i]
 		}
@@ -19,7 +19,7 @@ var maxProfit = function(prices) {
 			sell = null
 		}
 
-    // last run
+		// last run
 		if (i === prices.length - 1 && typeof buy === 'number') {
 			profit += sell - buy
 		}

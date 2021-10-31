@@ -4,11 +4,11 @@ var twoSum = function(nums, target) {
 
 	while (i < nums.length) {
 
-    // if value appears on the hash
+		// if value appears on the hash
 		if (hash[nums[i]] || hash[nums[i]] === 0)
 			return [hash[nums[i]], i]
 
-    // if it doesnt appear
+		// if it doesnt appear
 		hash[target - nums[i]] = i
 		i++
 	}

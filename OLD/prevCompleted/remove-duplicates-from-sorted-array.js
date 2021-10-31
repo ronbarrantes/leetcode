@@ -4,16 +4,16 @@
  */
 
 var removeDuplicates = function(nums) {
-  // something that loops over the array
+	// something that loops over the array
 	let pointer = 0
 
 	while (pointer < nums.length) {
-    // if numbers are equal
+		// if numbers are equal
 		if (nums[pointer] === nums[pointer + 1]) {
-      // remove next number
+			// remove next number
 			nums.splice(pointer + 1, 1)
 		} else {
-      // move pointer
+			// move pointer
 			pointer++
 		}
 	}
