@@ -42,15 +42,19 @@ class LinkedList extends BaseNode{
 	/**
 	 * logs and returns the values of the linked list in array form
 	 */
-	log() {
+
+	displayAsArray(){
 		let arr = []
 		let node = this
 		while (node) {
 			arr = [...arr, node.val]
 			node = node.next
 		}
-		console.log(arr)
 		return arr
+	}
+
+	log() {
+		console.log(this.displayAsArray())
 	}
 }
 

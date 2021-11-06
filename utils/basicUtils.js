@@ -1,3 +1,4 @@
+const colors = require('colors')
 const BinaryTree = require('../DataStructures/BinaryTree')
 
 /**
@@ -36,8 +37,8 @@ let testNum = 1 // Creates a closure for the basicTest
  */
 
 const basicTest = (input, output, expected) => {
-	const pass = `\x1b[1m\x1b[32mTEST #${testNum} | √ PASS\x1b[0m`
-	const fail = `\x1b[1m\x1b[31mTEST #${testNum} | X FAIL\x1b[0m`
+	const pass = `TEST #${testNum} | √ PASS`.green.bold
+	const fail = `TEST #${testNum} | X FAIL`.red.bold
 
 	const isPassing = output === expected
 	const result = isPassing ? pass : fail
@@ -90,8 +91,26 @@ const spacer = (message = null) => {
 	console.log(space)
 }
 
+/**
+ * Test a function multiple times with an array of values
+ * @param {function} testFunction Function to be tested
+ * @param {string[]} array Array of values to be iterated over
+ * @param {string} titleFlag A title to be given (just in case)
+ */
+const testIterator = (testFunction, array, titleFlag = '') => {
+	console.log(`###${titleFlag}###`)
+	for(const item of array){
+		const testResult = testFunction(item)
+		const resultColor = testResult ? 'bgGreen' : 'bgRed'
+		const validationMessage = `-${testFunction(item)}-`.toUpperCase()[resultColor].black
+
+		console.log(validationMessage, item)
+	}
+	console.log(``)
+}
+
 module.exports = {
 	addSpaces, printLinkedList,
 	basicTest, deserializeTree,
-	spacer,
+	spacer, testIterator,
 }
