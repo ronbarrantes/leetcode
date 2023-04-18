@@ -1,6 +1,78 @@
+# Created by https://www.toptal.com/developers/gitignore/api/c,c++,nextjs,git,node,vscode,vim,typings
+# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,nextjs,git,node,vscode,vim,typings
 
-# Created by https://www.toptal.com/developers/gitignore/api/git,node,vscode,vim,typings
-# Edit at https://www.toptal.com/developers/gitignore?templates=git,node,vscode,vim,typings
+### C ###
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+### C++ ###
+# Prerequisites
+
+# Compiled Object files
+*.slo
+
+# Precompiled Headers
+
+# Compiled Dynamic libraries
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+
+# Executables
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -17,13 +89,46 @@
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
+### NextJS ###
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
 ### Node ###
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -61,17 +166,19 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
-typings/
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
 
 # TypeScript cache
-*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
 
 # Optional eslint cache
 .eslintcache
+
+# Optional stylelint cache
+.stylelintcache
 
 # Microbundle cache
 .rpt2_cache/
@@ -88,10 +195,12 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variable files
 .env
-.env.test
-.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -99,6 +208,7 @@ typings/
 
 # Next.js build output
 .next
+out
 
 # Nuxt.js build / generate output
 .nuxt
@@ -112,6 +222,12 @@ dist
 
 # vuepress build output
 .vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
 
 # Serverless directories
 .serverless/
@@ -127,6 +243,22 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
+
+# Optional stylelint cache
+
+# SvelteKit build / generate output
+.svelte-kit
 
 ### Typings ###
 ## Ignore downloaded typings
@@ -153,14 +285,6 @@ tags
 # Persistent undo
 [._]*.un~
 
-### vscode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+#!! ERROR: vscode is undefined. Use list command to see defined gitignore types !!#
 
-# End of https://www.toptal.com/developers/gitignore/api/git,node,vscode,vim,typings
-
-/out
+# End of https://www.toptal.com/developers/gitignore/api/c,c++,nextjs,git,node,vscode,vim,typings
