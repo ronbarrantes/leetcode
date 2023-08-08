@@ -1,22 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class Solution
-{
-  void getLongestOther(string currString, string *currLongest)
-  {
-    for (int i = 0; i < (*currLongest).length(); i++)
-    {
+class Solution {
+  void getLongestOther(string currString, string *currLongest) {
+    for (int i = 0; i < (*currLongest).length(); i++) {
       if (currString[i] != (*currLongest)[i])
         (*currLongest).substr(0, i);
       break;
     }
   }
 
-  string getLongest(string currString, string currLongest)
-  {
-    for (int i = 0; i < currLongest.length(); i++)
-    {
+  string getLongest(string currString, string currLongest) {
+    for (int i = 0; i < currLongest.length(); i++) {
       if (currString[i] != currLongest[i])
         return currLongest.substr(0, i);
     }
@@ -25,8 +20,7 @@ class Solution
   }
 
 public:
-  string longestCommonPrefix(vector<string> &strs)
-  {
+  string longestCommonPrefix(vector<string> &strs) {
     sort(strs.begin(), strs.end());
     string result = strs[0];
     string currLongest = strs[0];
@@ -38,8 +32,7 @@ public:
 
     int length = strs.size();
 
-    for (int i = 0; i < length; i++)
-    {
+    for (int i = 0; i < length; i++) {
       // currLongest = getLongest(strs[i], currLongest);
 
       getLongestOther(strs[i], p_currLongest);
@@ -50,3 +43,16 @@ public:
     return result;
   }
 };
+
+int main() {
+  Solution s;
+  vector<string> strs;
+
+  strs.push_back("flower");
+  strs.push_back("flow");
+  strs.push_back("flight");
+
+  cout << s.longestCommonPrefix(strs) << endl;
+
+  return 0;
+}
