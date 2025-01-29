@@ -4,12 +4,12 @@
  * @return {boolean}
  */
 
-// should return a number
 const findFlowersLeft = (flowerbed, idx, count) => {
   while (idx < flowerbed.length) {
     if (
       flowerbed[idx] === 0 &&
-      (!flowerbed[idx + 1] || flowerbed[idx + 1] === 0)
+      (!flowerbed[idx + 1] || flowerbed[idx + 1] === 0) &&
+      (!flowerbed[idx - 1] || flowerbed[idx - 1] === 0)
     ) {
       count--
       idx++
@@ -37,3 +37,4 @@ console.log(canPlaceFlowers([0], 0) === true)
 console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1) === true)
 console.log(canPlaceFlowers([0], 1) === true)
 console.log(canPlaceFlowers([1], 1) === false)
+console.log(canPlaceFlowers([1, 0, 0, 0, 0, 1], 2) === false)
