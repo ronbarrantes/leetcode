@@ -1,8 +1,9 @@
+import { performance } from 'perf_hooks';
+
 /**
  * @param {number[]} nums
  * @return {number[][]}
  */
-const { performance } = require('perf_hooks');
 
 var permuteUnique = function (nums) {
   const solution = [];
