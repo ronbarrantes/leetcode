@@ -15,6 +15,7 @@ var permuteUnique = function (nums) {
       solution.push([...curr]);
     } else {
       for (let i = 0; i < nums.length; i++) {
+        // this ensure uniqueness
         if (nums[i] === nums[i - 1]) continue;
         // choose
         curr.push(nums[i]);
