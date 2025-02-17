@@ -32,7 +32,7 @@ var permuteUnique = function (nums) {
 };
 
 let t0 = performance.now();
-console.log('ANSWER -->', permuteUnique([1, 1, 2]));
+console.log('ANSWER -->', permuteUnique([1, 2, 3, 4]));
 let t1 = performance.now();
 let time = (t1 - t0).toFixed(2);
 
