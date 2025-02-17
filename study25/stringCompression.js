@@ -5,47 +5,22 @@ const { basicTest } = require("../utils/basicUtils");
  * @return {number}
  */
 var compress = function (chars) {
-  let p1 = 0;
-  let p2 = 1;
+  let register = 0;
+  let counter = 0;
 
-  // distance between p2 and p1
 
-  while (p2 < chars.length) {
-    console.log([[p1, p2]]);
+  // I am going to count the letters first
+  // I will recored the number of spaces moved
+  // Increase the 
+  
 
-    if (chars[p1] !== chars[p2]) {
-      // this is where the compression should happen
+  while(coounter)
 
-      // if the distance is less than 1
-
-      if (p2 - p1 > 1) {
-        console.log("compress");
-        // compress
-        chars.splice(p1 + 1, p2, `${p2 - p1}`);
-        p1 = p1 + 1;
-        p2 = p2 + 1;
-        continue;
-      }
-
-      p1++;
-      p2++;
-    } else p2++;
-
-    // things to check
-
-    // if the next letter is the same as the current letter
-
-    // if it is not then is it more than 1 of distance
-
-    // if it is then compres
-  }
 };
 
 const input1 = ["a", "a", "b", "b", "c", "c", "c"];
-const expected1 = ["a", "a", "b", "b", "c", "c", "c"];
+const expected1 = ["a", "2", "b", "2", "c", "3"];
 basicTest(input1, compress(input1), expected1);
-
-basicTest(["a"], compress(["a"]), ["a"]);
 
 const input2 = ["a"];
 const expected2 = ["a"];
