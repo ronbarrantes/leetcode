@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "ronbarrantes <ronbarrantes@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "eslint ."
   },
