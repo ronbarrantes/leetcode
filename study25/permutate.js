@@ -10,18 +10,18 @@ var permute = function (nums) {
     // base case
     if (nums.length === 0) {
       result.push([...curr]);
-    } else {
-      // loop
-      for (let i = 0; i < nums.length; i++) {
-        //choose
-        const currNum = nums[i];
-        curr.push(currNum);
-        //explore
-        const restArr = [...nums.slice(0, i), ...nums.slice(i + 1)];
-        traverse(restArr, curr);
-        //unchoose
-        curr.pop();
-      }
+      return;
+    }
+    // loop
+    for (let i = 0; i < nums.length; i++) {
+      //choose
+      const currNum = nums[i];
+      curr.push(currNum);
+      //explore
+      const restArr = [...nums.slice(0, i), ...nums.slice(i + 1)];
+      traverse(restArr, curr);
+      //unchoose
+      curr.pop();
     }
   };
 
