@@ -1,10 +1,9 @@
+import { test } from '../utils/basicUtils.js';
+
 /**
  * @param {string[]} strs
  * @return {string[][]}
  */
-
-const { basicTest } = require("../utils/basicUtils");
-
 var groupAnagrams = function (strs) {
   const anagramMap = new Map();
   const result = [];
@@ -12,7 +11,7 @@ var groupAnagrams = function (strs) {
   // sort each letter
   strs.forEach((str) => {
     // make words into array
-    const key = str.split("").sort().join("");
+    const key = str.split('').sort().join('');
     // check if it exist in the map
     if (!anagramMap.has(key)) {
       anagramMap.set(key, [str]);
@@ -29,14 +28,16 @@ var groupAnagrams = function (strs) {
   return result;
 };
 
-const input1 = ["eat", "tea", "tan", "ate", "nat", "bat"];
-const expected1 = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]];
-basicTest(input1, groupAnagrams(input1), expected1);
+const testInputs = [
+  [
+    ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'],
+    [['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']],
+  ],
+  [[''], [['']]],
+  [['a'], [['a']]],
+];
 
-const input2 = [""];
-const expected2 = [[""]];
-basicTest(input2, groupAnagrams(input2), expected2);
-
-const input3 = ["a"];
-const expected3 = [["a"]];
-basicTest(input3, groupAnagrams(input3), expected3);
+testInputs.forEach((item) => {
+  const [input, expected] = item;
+  test(groupAnagrams(input), expected, false);
+});

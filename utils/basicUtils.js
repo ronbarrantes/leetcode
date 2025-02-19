@@ -1,12 +1,10 @@
-import * as colors from 'colors';
-import BinaryTree from '../DataStructures/BinaryTree';
+import { strict as assert } from 'node:assert';
+import colors from 'colors';
+import BinaryTree from '../DataStructures/BinaryTree.js';
 
-Object.keys(colors).forEach((color) => {
-  if (typeof colors[color] === 'function') {
-    String.prototype[color] = function () {
-      return colors[color](this);
-    };
-  }
+colors.setTheme({
+  pass: ['green', 'bold'],
+  fail: ['red', 'bold'],
 });
 
 /**
@@ -14,7 +12,7 @@ Object.keys(colors).forEach((color) => {
  * @param num The number of spaces to be added
  * @returns spaces*num
  */
-const addSpaces = (num) => {
+export const addSpaces = (num) => {
   let space = '';
   for (let i = 0; i < num; i++) {
     space += ' ';
@@ -27,7 +25,7 @@ const addSpaces = (num) => {
  * @param list The linked list
  * @returns a list [ item1, item2, ...item N]
  */
-const printLinkedList = function (list) {
+export const printLinkedList = function (list) {
   let arr = [];
   while (list) {
     arr = [...arr, list.val];
@@ -44,9 +42,9 @@ let testNum = 1; // Creates a closure for the basicTest
  * @param expected The expected output
  */
 
-const basicTest = (input, output, expected) => {
-  const pass = `TEST #${testNum} | √ PASS`.green.bold;
-  const fail = `TEST #${testNum} | X FAIL`.red.bold;
+export const basicTest = (input, output, expected) => {
+  const pass = `TEST #${testNum} | √ PASS`.pass;
+  const fail = `TEST #${testNum} | X FAIL`.fail;
 
   const isPassing = output === expected;
   const result = isPassing ? pass : fail;
@@ -56,14 +54,43 @@ const basicTest = (input, output, expected) => {
   testNum++;
 };
 
+const deepSort = (arr) => {
+  if (!Array.isArray(arr)) return arr;
+  return arr.map(deepSort).sort();
+};
+
 /**
- * Takes an array and converts it into a tree
- * @param arr that represents the tree by level (Breadth First)
+ * Tests if the output matches the expected value.
  *
+ * @param {any} output - The output to be tested.
+ * @param {any} expected - The expected value to compare against.
+ * @param {boolean} [maintainOrder=false] - Whether to consider the output and expected values as sorted.
+ */
+
+export const test = (output, expected, maintainOrder = true) => {
+  const pass = `#${testNum} - √ PASS`.pass;
+  const fail = `#${testNum} - X FAIL`.fail;
+
+  output = maintainOrder ? output : deepSort(output);
+  expected = maintainOrder ? expected : deepSort(expected);
+
+  try {
+    assert.deepStrictEqual(output, expected, 'Output ≠ Expected');
+    console.log(`${pass} --> ${output}`);
+  } catch (error) {
+    console.error(`${fail} ---> ${output}::${expected}`, error.message);
+  }
+
+  console.log('+---------------------------+');
+  testNum++;
+};
+
+/**
+ * @param arr that represents the tree by level (Breadth First)
  * (Visit the link below for more info)
  * @link https://leetcode.com/problems/recover-binary-search-tree/discuss/32539/Tree-Deserializer-and-Visualizer-for-Python
  */
-const deserializeTree = (arr) => {
+export const deserializeTree = (arr) => {
   if (arr.length === 0) return null;
 
   const nodes = arr.map((node) => {
@@ -88,7 +115,7 @@ const deserializeTree = (arr) => {
  * Adds a divider on the console
  * @param string Adds a message
  */
-const spacer = (message = null) => {
+export const spacer = (message = null) => {
   let space = '';
   if (message) space += `\n${message}\n`;
   space += '-------------------------';
@@ -101,7 +128,7 @@ const spacer = (message = null) => {
  * @param {string[]} array Array of values to be iterated over
  * @param {string} titleFlag A title to be given (just in case)
  */
-const testIterator = (testFunction, array, titleFlag = '') => {
+export const testIterator = (testFunction, array, titleFlag = '') => {
   console.log(`###${titleFlag}###`);
   for (const item of array) {
     const testResult = testFunction(item);
@@ -114,13 +141,3 @@ const testIterator = (testFunction, array, titleFlag = '') => {
   }
   console.log(``);
 };
-
-module.exports = {
-  addSpaces,
-  printLinkedList,
-  basicTest,
-  deserializeTree,
-  spacer,
-  testIterator,
-};
-

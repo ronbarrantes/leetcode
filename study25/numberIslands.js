@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const { basicTest } = require('../utils/basicUtils');
+import { test } from '../utils/basicUtils.js';
 
 // 1 1 0 1 1 0
 // 1 1 0 1 1 1
@@ -55,35 +55,38 @@ var numIslands = function (grid) {
   return count;
 };
 
-const input1 = [
-  ['1', '1', '1', '1', '0'],
-  ['1', '1', '0', '1', '0'],
-  ['1', '1', '0', '0', '0'],
-  ['0', '0', '0', '0', '0'],
+const testInputs = [
+  [
+    [
+      ['1', '1', '1', '1', '0'],
+      ['1', '1', '0', '1', '0'],
+      ['1', '1', '0', '0', '0'],
+      ['0', '0', '0', '0', '0'],
+    ],
+    1,
+  ],
+  [
+    [
+      ['1', '1', '0', '0', '0'],
+      ['1', '1', '0', '0', '0'],
+      ['0', '0', '1', '0', '0'],
+      ['0', '0', '0', '1', '1'],
+    ],
+    3,
+  ],
+  [
+    [
+      ['0', '1', '1', '1', '0', '1'],
+      ['0', '1', '1', '1', '1', '1'],
+      ['0', '1', '1', '1', '0', '1'],
+      ['0', '1', '0', '0', '0', '0'],
+      ['1', '1', '1', '1', '0', '1'],
+      ['0', '0', '0', '1', '1', '1'],
+    ],
+    1,
+  ],
 ];
-const expected1 = 1;
-
-basicTest(input1, numIslands(input1), expected1);
-
-// console.log(canExplore(input1, 0, 5));
-
-const input2 = [
-  ['1', '1', '0', '0', '0'],
-  ['1', '1', '0', '0', '0'],
-  ['0', '0', '1', '0', '0'],
-  ['0', '0', '0', '1', '1'],
-];
-const expected2 = 3;
-basicTest(input2, numIslands(input2), expected2);
-
-const input3 = [
-  ['0', '1', '1', '1', '0', '1'],
-  ['0', '1', '1', '1', '1', '1'],
-  ['0', '1', '1', '1', '0', '1'],
-  ['0', '1', '0', '0', '0', '0'],
-  ['1', '1', '1', '1', '0', '1'],
-  ['0', '0', '0', '1', '1', '1'],
-];
-
-const expected3 = 1;
-basicTest(input3, numIslands(input3), expected3);
+testInputs.forEach((item) => {
+  const [input, expected] = item;
+  test(numIslands(input), expected);
+});

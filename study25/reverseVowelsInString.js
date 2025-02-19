@@ -1,4 +1,4 @@
-const { basicTest } = require('../utils/basicUtils')
+import { basicTest } from '../utils/basicUtils.js';
 
 /**
  * @param {string} s
@@ -6,31 +6,31 @@ const { basicTest } = require('../utils/basicUtils')
  */
 var reverseVowels = function (s) {
   // make array
-  let lo = 0
-  let hi = s.length - 1
-  const arr = s.split('')
+  let lo = 0;
+  let hi = s.length - 1;
+  const arr = s.split('');
 
-  const reg = /[aeiouAEIOU]/
+  const reg = /[aeiouAEIOU]/;
 
   while (lo < hi) {
     if (!reg.test(arr[lo])) {
-      lo++
-      continue
+      lo++;
+      continue;
     } else if (!reg.test(arr[hi])) {
-      hi--
-      continue
+      hi--;
+      continue;
     } else {
-      const temp = arr[lo]
-      arr[lo] = arr[hi]
-      arr[hi] = temp
+      const temp = arr[lo];
+      arr[lo] = arr[hi];
+      arr[hi] = temp;
 
-      lo++
-      hi--
+      lo++;
+      hi--;
     }
   }
 
-  return arr.join('')
-}
+  return arr.join('');
+};
 
-basicTest('IceCreAm', reverseVowels('IceCreAm'), 'AceCreIm')
-basicTest('leetcode', reverseVowels('leetcode'), 'leotcede')
+basicTest('IceCreAm', reverseVowels('IceCreAm'), 'AceCreIm');
+basicTest('leetcode', reverseVowels('leetcode'), 'leotcede');

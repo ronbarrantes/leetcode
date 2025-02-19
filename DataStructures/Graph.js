@@ -3,21 +3,20 @@
 // 	   this.neighbors = neighbors === undefined ? [] : neighbors
 // }
 
-const BaseNode = require('./BaseNode')
+import BaseNode from './BaseNode.js';
 
 /**
  * @param {Node} node
  * @return {Node}
  */
-class Graph extends BaseNode {
-	/**
-	 * @param {*} val
-	 * @param {*} neighbors
-	 */
-	constructor(val, neighbors){
-		super(val)
-		this.neighbors = neighbors === undefined ? [] : neighbors
-	}
+export default class Graph extends BaseNode {
+  /**
+   * @param {*} val
+   * @param {*} neighbors
+   */
+  constructor(val, neighbors) {
+    super(val);
+    this.neighbors = neighbors === undefined ? [] : neighbors;
+  }
 }
 
-module.exports = Graph

@@ -3,7 +3,7 @@
  * @return {string[]}
  */
 
-import { basicTest } from '../utils/basicUtils.js';
+import { test } from '../utils/basicUtils.js';
 
 const digitMap = new Map([
   ['2', 'abc'],
@@ -16,27 +16,69 @@ const digitMap = new Map([
   ['9', 'wxyz'],
 ]);
 
-// abc
-// ghi
-
 var letterCombinations = function (digits) {
   if (!digits.length) return [];
 
   const result = [];
-  const traverse = (digits, pt = 0) => {
+  const traverse = (pt = 0, res = []) => {
     // base
-    // choose
-    // explore
-    // unchoose
+    if (pt === digits.length) {
+      result.push([...res].join(''));
+      return;
+    }
+
+    const currStr = digitMap.get(digits[pt]);
+    for (let i = 0; i < currStr.length; i++) {
+      // choose
+      res.push(currStr[i]);
+      // explore
+      traverse(pt + 1, res);
+      // unchoose
+      res.pop();
+    }
   };
 
-  traverse(digits);
+  traverse();
   return result;
 };
 
-const input1 = '23';
-const result1 = letterCombinations(input1);
-const expected1 = ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf'];
+const testInputs = [
+  ['23', ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']],
+  [
+    '232',
+    [
+      'ada',
+      'adb',
+      'adc',
+      'aea',
+      'aeb',
+      'aec',
+      'afa',
+      'afb',
+      'afc',
+      'bda',
+      'bdb',
+      'bdc',
+      'bea',
+      'beb',
+      'bec',
+      'bfa',
+      'bfb',
+      'bfc',
+      'cda',
+      'cdb',
+      'cdc',
+      'cea',
+      'ceb',
+      'cec',
+      'cfa',
+      'cfb',
+      'cfc',
+    ],
+  ],
+];
 
-//basicTest(input1, result1, expected1);
-basicTest('3', '3', '3');
+testInputs.forEach((item) => {
+  const [input, expected] = item;
+  test(letterCombinations(input), expected, true);
+});

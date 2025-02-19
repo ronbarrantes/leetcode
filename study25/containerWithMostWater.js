@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const { basicTest } = require("../utils/basicUtils");
+import { basicTest } from '../utils/basicUtils.js';
 
 const container = (h, lo, hi) => (hi - lo) * Math.min(h[lo], h[hi]);
 

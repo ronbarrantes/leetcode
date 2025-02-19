@@ -1,61 +1,60 @@
-const BaseNode = require('./BaseNode')
+import BaseNode from './BaseNode';
 
-class LinkedList extends BaseNode{
-	constructor(val, next) {
-		super(val)
-		this.next = next === undefined ? null : next
-	}
+export default class LinkedList extends BaseNode {
+  constructor(val, next) {
+    super(val);
+    this.next = next === undefined ? null : next;
+  }
 
-	/**
-	 *
-	 * @param vals A value or values to be passed to the LinkedList
-	 */
-	append(...vals){
-		if(vals.length === 0){
-			return this
-		}
+  /**
+   *
+   * @param vals A value or values to be passed to the LinkedList
+   */
+  append(...vals) {
+    if (vals.length === 0) {
+      return this;
+    }
 
-		let node = this
+    let node = this;
 
-		while (node.next) {
-			node = node.next
-		}
+    while (node.next) {
+      node = node.next;
+    }
 
-		if(this.val !== undefined){
-			node.next = new LinkedList()
-			node = node.next
-		}
+    if (this.val !== undefined) {
+      node.next = new LinkedList();
+      node = node.next;
+    }
 
-		vals.forEach((val, i) => {
-			node.val = val
-			if(i < vals.length - 1){
-				node.next = new LinkedList()
-				node = node.next
-			}
-		})
+    vals.forEach((val, i) => {
+      node.val = val;
+      if (i < vals.length - 1) {
+        node.next = new LinkedList();
+        node = node.next;
+      }
+    });
 
-		return this
-	}
+    return this;
+  }
 
-	// TODO: IMPLEMENT DELETE
+  // TODO: IMPLEMENT DELETE
 
-	/**
-	 * logs and returns the values of the linked list in array form
-	 */
+  /**
+   * logs and returns the values of the linked list in array form
+   */
 
-	displayAsArray(){
-		let arr = []
-		let node = this
-		while (node) {
-			arr = [...arr, node.val]
-			node = node.next
-		}
-		return arr
-	}
+  displayAsArray() {
+    let arr = [];
+    let node = this;
+    while (node) {
+      arr = [...arr, node.val];
+      node = node.next;
+    }
+    return arr;
+  }
 
-	log() {
-		console.log(this.displayAsArray())
-	}
+  log() {
+    console.log(this.displayAsArray());
+  }
 }
 
-module.exports = LinkedList
