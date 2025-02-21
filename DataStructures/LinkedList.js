@@ -46,23 +46,23 @@ export default class LinkedList extends BaseNode {
   log() {
     console.log(this.displayAsArray());
   }
-}
 
-/**
- * Converts an array to a linked list.
- * @param {any[]} arr - The array to convert.
- * @returns {LinkedList} The head of the linked list.
- */
-export const arrayToLinkedList = (arr) => {
-  if (arr.length === 0) return null;
+  /**
+   * Converts an array to a linked list.
+   * @param {any[]} arr - The array to convert.
+   * @returns {LinkedList} The head of the linked list.
+   */
+  static arrayToLinkedList(arr) {
+    if (arr.length === 0) return null;
 
-  const head = new LinkedList(arr[0]);
-  let current = head;
+    const head = new LinkedList(arr[0]);
+    let current = head;
 
-  for (let i = 1; i < arr.length; i++) {
-    current.next = new LinkedList(arr[i]);
-    current = current.next;
+    for (let i = 1; i < arr.length; i++) {
+      current.next = new LinkedList(arr[i]);
+      current = current.next;
+    }
+
+    return head;
   }
-
-  return head;
-};
+}
