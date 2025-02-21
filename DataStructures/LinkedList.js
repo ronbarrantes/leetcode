@@ -1,53 +1,43 @@
-import BaseNode from './BaseNode';
+/* eslint-disable @typescript-eslint/no-this-alias */
+import BaseNode from './BaseNode.js';
 
 export default class LinkedList extends BaseNode {
-  constructor(val, next) {
+  constructor(val, next = null) {
     super(val);
-    this.next = next === undefined ? null : next;
+    this.next = next;
   }
 
   /**
-   *
-   * @param vals A value or values to be passed to the LinkedList
+   * Appends one or more values to the linked list efficiently.
+   * @param {any[]} vals - Values to append.
+   * @returns {LinkedList} The updated linked list.
    */
   append(...vals) {
-    if (vals.length === 0) {
-      return this;
+    if (vals.length === 0) return this;
+
+    // Find the last node (tail)
+    let tail = this;
+    while (tail.next) {
+      tail = tail.next;
     }
 
-    let node = this;
-
-    while (node.next) {
-      node = node.next;
+    // Append new nodes
+    for (const val of vals) {
+      tail.next = new LinkedList(val);
+      tail = tail.next;
     }
-
-    if (this.val !== undefined) {
-      node.next = new LinkedList();
-      node = node.next;
-    }
-
-    vals.forEach((val, i) => {
-      node.val = val;
-      if (i < vals.length - 1) {
-        node.next = new LinkedList();
-        node = node.next;
-      }
-    });
 
     return this;
   }
 
-  // TODO: IMPLEMENT DELETE
-
   /**
-   * logs and returns the values of the linked list in array form
+   * Logs and returns the values of the linked list in array form.
    */
-
   displayAsArray() {
-    let arr = [];
+    const arr = [];
     let node = this;
     while (node) {
-      arr = [...arr, node.val];
+      arr.push(node.val);
       node = node.next;
     }
     return arr;
@@ -58,3 +48,21 @@ export default class LinkedList extends BaseNode {
   }
 }
 
+/**
+ * Converts an array to a linked list.
+ * @param {any[]} arr - The array to convert.
+ * @returns {LinkedList} The head of the linked list.
+ */
+export const arrayToLinkedList = (arr) => {
+  if (arr.length === 0) return null;
+
+  const head = new LinkedList(arr[0]);
+  let current = head;
+
+  for (let i = 1; i < arr.length; i++) {
+    current.next = new LinkedList(arr[i]);
+    current = current.next;
+  }
+
+  return head;
+};
