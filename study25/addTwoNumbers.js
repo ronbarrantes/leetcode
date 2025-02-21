@@ -1,36 +1,5 @@
-const ListNode = require("../DataStructures/LinkedList");
-
-/**
- * Recursively processes two linked lists.
- *
- * @param {ListNode} l1 - The first linked list node.
- * @param {ListNode} l2 - The second linked list node.
- * @returns {[ListNode, number]} An array containing a ListNode and a number.
- */
-const recurse = (l1, l2) => {
-  // add the numbers
-  let remainer = 0;
-  if (!l1 && !l2) return [null, remainer];
-
-  const val1 = (l1 && l1.val) || 0;
-  const val2 = (l2 && l2.val) || 0;
-
-  const pt1 = (l1 && l1.next) || l1;
-  const pt2 = (l2 && l2.next) || l2;
-
-  const newNode = recurse(l1, l2);
-
-  console.log(val1, val2);
-
-  let total = val1 + val2 + remainer;
-  if (total >= 10) {
-    remainer += Math.floor(total / 10);
-    total = total % 10;
-  }
-
-  //
-};
-
+import ListNode, { arrayToLinkedList } from '../DataStructures/LinkedList.js';
+import { test } from '../utils/basicUtils.js';
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -45,5 +14,25 @@ const recurse = (l1, l2) => {
  */
 
 var addTwoNumbers = function (l1, l2) {
-  return recurse(l1, l2)[0];
+  console.log(l1);
+  console.log(l2);
 };
+
+const testInputs = [
+  [
+    [
+      [1, 2, 3, 4],
+      [9, 9],
+    ],
+    [0, 2, 4, 4],
+  ],
+];
+
+testInputs.forEach((item) => {
+  const [input, expected] = item;
+  const l1 = arrayToLinkedList(input[0]);
+  const l2 = arrayToLinkedList(input[1]);
+  const lExpected = arrayToLinkedList(expected);
+
+  test(addTwoNumbers(l1, l2), lExpected);
+});
