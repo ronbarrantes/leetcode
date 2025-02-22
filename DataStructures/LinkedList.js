@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
 import BaseNode from './BaseNode.js';
 
 export default class LinkedList extends BaseNode {
