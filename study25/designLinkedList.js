@@ -8,11 +8,14 @@ var MyLinkedList = function () {
  * @return {number}
  */
 MyLinkedList.prototype.get = function (index) {
-  // loop over until we get to the correct index
-  //
-  // or no more items in the linked list
   let node = this;
-  while (index > 0 || !node) {}
+
+  for (let i = 0; i <= index; i++) {
+    if (!node) return null;
+    node = node.next;
+  }
+
+  return node.val;
 };
 
 /**
@@ -52,6 +55,7 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {};
 
 const myLL = new MyLinkedList();
 console.log('my linked list', myLL);
+console.log('node 1 -->', myLL.get(1));
 
 const input = [
   [
