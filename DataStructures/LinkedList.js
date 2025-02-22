@@ -55,6 +55,7 @@ export default class LinkedList extends BaseNode {
   static arrayToLinkedList(arr) {
     if (arr.length === 0) return null;
 
+    // this is the pointer to be returned
     const head = new LinkedList(arr[0]);
     let current = head;
 
@@ -66,3 +67,6 @@ export default class LinkedList extends BaseNode {
     return head;
   }
 }
+
+// to add from front to back, use for loop
+// to add from back to front, use recursion
