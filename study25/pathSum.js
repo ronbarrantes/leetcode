@@ -17,14 +17,37 @@ var hasPathSum = function (root, targetSum) {
 
   if (!root) return false;
 
-  if (root.val && !root.left && !root.right) {
-    return targetSum === 0;
+  if (!root.left && !root.right) {
+    return targetSum - root.val === 0;
   }
 
-  const left = hasPathSum(root?.left, targetSum - root.val);
-  const right = hasPathSum(root?.right, targetSum - root.val);
+  const left = hasPathSum(root.left, targetSum - root.val);
+  const right = hasPathSum(root.right, targetSum - root.val);
 
   return left || right;
-
-  // [[targetSum, root.val], targetSum - root.val]
 };
+
+const root = {
+  val: 5,
+  left: {
+    val: 4,
+    left: {
+      val: 11,
+      left: { val: 7, left: null, right: null },
+      right: { val: 2, left: null, right: null },
+    },
+    right: null,
+  },
+  right: {
+    val: 8,
+    left: { val: 13, left: null, right: null },
+    right: {
+      val: 4,
+      left: null,
+      right: { val: 1, left: null, right: null },
+    },
+  },
+};
+
+const targetSum = 22;
+console.log(hasPathSum(root, targetSum)); // Should print true or false based on the tree structure and targetSum
