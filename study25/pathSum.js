@@ -1,3 +1,6 @@
+import { test } from '../utils/basicUtils.js';
+import { hasPathSumTest } from './testData/binaryTree.js';
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -11,15 +14,10 @@
  * @param {number} targetSum
  * @return {boolean}
  */
-
 var hasPathSum = function (root, targetSum) {
-  // base
-
   if (!root) return false;
 
-  if (!root.left && !root.right) {
-    return targetSum - root.val === 0;
-  }
+  if (!root.left && !root.right) return targetSum - root.val === 0;
 
   const left = hasPathSum(root.left, targetSum - root.val);
   const right = hasPathSum(root.right, targetSum - root.val);
@@ -27,27 +25,9 @@ var hasPathSum = function (root, targetSum) {
   return left || right;
 };
 
-const root = {
-  val: 5,
-  left: {
-    val: 4,
-    left: {
-      val: 11,
-      left: { val: 7, left: null, right: null },
-      right: { val: 2, left: null, right: null },
-    },
-    right: null,
-  },
-  right: {
-    val: 8,
-    left: { val: 13, left: null, right: null },
-    right: {
-      val: 4,
-      left: null,
-      right: { val: 1, left: null, right: null },
-    },
-  },
-};
-
-const targetSum = 22;
-console.log(hasPathSum(root, targetSum)); // Should print true or false based on the tree structure and targetSum
+hasPathSumTest.forEach((testData) => {
+  const input = testData.input;
+  const ts = testData.targetSum;
+  const expected = testData.expected;
+  test(hasPathSum(input, ts), expected);
+});

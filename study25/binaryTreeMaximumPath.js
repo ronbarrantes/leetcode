@@ -1,4 +1,5 @@
 import { test } from '../utils/basicUtils.js';
+import { binaryTreeMaximumPathTests } from './testData/binaryTree.js';
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -42,37 +43,6 @@ var maxPathSum = function (root) {
   return max;
 };
 
-const testCases = [
-  {
-    input: {
-      val: 1,
-      left: { val: 2, left: null, right: null },
-      right: { val: 3, left: null, right: null },
-    },
-    expected: 6,
-  },
-  {
-    input: {
-      val: -10,
-      left: { val: 9, left: null, right: null },
-      right: {
-        val: 20,
-        left: { val: 15, left: null, right: null },
-        right: { val: 7, left: null, right: null },
-      },
-    },
-    expected: 42,
-  },
-  {
-    input: {
-      val: 2,
-      left: { val: -1, left: null, right: null },
-      right: { val: -2, left: null, right: null },
-    },
-    expected: 2,
-  },
-];
-
-testCases.forEach(({ input, expected }) => {
+binaryTreeMaximumPathTests.forEach(({ input, expected }) => {
   test(maxPathSum(input), expected);
 });

@@ -1,5 +1,5 @@
 import { test } from '../utils/basicUtils.js';
-import TreeNode from '../DataStructures/BinaryTree.js';
+import { binaryTreePathsTests } from './testData/binaryTree.js';
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -41,29 +41,6 @@ var binaryTreePaths = function (root) {
   return paths;
 };
 
-const tests = [
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(2, null, new TreeNode(5)),
-      new TreeNode(3)
-    ),
-    expected: ['1->2->5', '1->3'],
-  },
-  {
-    input: new TreeNode(1),
-    expected: ['1'],
-  },
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(2),
-      new TreeNode(3, new TreeNode(4), new TreeNode(5))
-    ),
-    expected: ['1->2', '1->3->4', '1->3->5'],
-  },
-];
-
-tests.forEach(({ input, expected }) => {
+binaryTreePathsTests.forEach(({ input, expected }) => {
   test(binaryTreePaths(input), expected);
 });
