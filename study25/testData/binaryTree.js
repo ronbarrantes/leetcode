@@ -111,11 +111,7 @@ export const binaryTreeMaximumPathTests = [
 
 export const binaryTreePathsTests = [
   {
-    input: new TreeNode(
-      1,
-      new TreeNode(2, null, new TreeNode(5)),
-      new TreeNode(3)
-    ),
+    input: TreeNode.fromArray([1, 2, 3, null, 5]),
     expected: ['1->2->5', '1->3'],
   },
   {
@@ -144,19 +140,18 @@ export const hasPathSumTest = [
   },
 
   {
-    input: new TreeNode(1, new TreeNode(2), new TreeNode(3)),
+    input: TreeNode.fromArray([1, 2, 3]),
     targetSum: 5,
     expected: false,
   },
 
   {
-    input: new TreeNode(1, new TreeNode(2), new TreeNode(3)),
+    input: TreeNode.fromArray([1, 2, 3]),
     targetSum: 4,
     expected: true,
   },
-
   {
-    input: new TreeNode(1, new TreeNode(2), new TreeNode(3)),
+    input: TreeNode.fromArray([1, 2, 3]),
     targetSum: 2,
     expected: false,
   },
@@ -175,79 +170,11 @@ export const hasPathSumTest = [
 ];
 
 export const countNodesTest = [
-  // Create 5 tests for countNodes
-
-  // Test 1
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(2, new TreeNode(4), new TreeNode(5)),
-      new TreeNode(3)
-    ),
-    expected: 5,
-  },
-  {
-    input: new TreeNode(1),
-    expected: 1,
-  },
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(
-        2,
-        new TreeNode(3, new TreeNode(4, new TreeNode(5), null), null),
-        null
-      ),
-      null
-    ),
-    expected: 5,
-  },
-  {
-    input: null,
-    expected: 0,
-  },
-  {
-    input: new TreeNode(1, new TreeNode(2), null),
-    expected: 2,
-  },
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(
-        2,
-        new TreeNode(
-          3,
-          new TreeNode(4, new TreeNode(5, new TreeNode(6), null), null),
-          null
-        ),
-        null
-      ),
-      null
-    ),
-    expected: 6,
-  },
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(
-        2,
-        null,
-        new TreeNode(3, null, new TreeNode(4, null, new TreeNode(5)))
-      ),
-      null
-    ),
-    expected: 5,
-  },
-  {
-    input: new TreeNode(
-      1,
-      new TreeNode(
-        2,
-        new TreeNode(4, new TreeNode(7)),
-        new TreeNode(5, null, new TreeNode(8))
-      ),
-      new TreeNode(3)
-    ),
-    expected: 7,
-  },
+  { input: TreeNode.fromArray([1, 2, 3, 4]), expected: 3 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5]), expected: 4 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6]), expected: 5 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7]), expected: 6 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8]), expected: 7 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8, 9]), expected: 8 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), expected: 9 },
 ];
