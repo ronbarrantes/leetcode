@@ -170,11 +170,14 @@ export const hasPathSumTest = [
 ];
 
 export const countNodesTest = [
-  { input: TreeNode.fromArray([1, 2, 3, 4]), expected: 3 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5]), expected: 4 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6]), expected: 5 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7]), expected: 6 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8]), expected: 7 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8, 9]), expected: 8 },
-  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), expected: 9 },
+  { input: TreeNode.fromArray([]), expected: 0 },
+  { input: TreeNode.fromArray([1]), expected: 1 },
+  { input: TreeNode.fromArray([1, 2, 3]), expected: 3 },
+  { input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8]), expected: 8 },
+  {
+    input: TreeNode.fromArray([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    ]),
+    expected: 20,
+  },
 ];

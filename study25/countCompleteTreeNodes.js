@@ -20,12 +20,12 @@ import { test } from '../utils/basicUtils.js';
 import { countNodesTest } from './testData/binaryTree.js';
 
 var countNodes = function (root) {
-  if (!root) return null;
-
-  console.log('root val --->>> ', root.val);
+  if (!root) return 0;
 
   const left = countNodes(root?.left);
   const right = countNodes(root?.right);
+
+  return left + right + 1;
 };
 
 countNodesTest.forEach(({ input, expected }) => {
