@@ -181,3 +181,34 @@ export const countNodesTest = [
     expected: 20,
   },
 ];
+
+export const sortedArrayToBSTTest = [
+  {
+    input: [-15, -10, -3, 0, 5, 9],
+    expected: TreeNode.fromArray([0, -10, 9, -15, -3, 5]),
+  },
+
+  {
+    input: [1, 3],
+    expected: TreeNode.fromArray([3, 1]),
+  },
+
+  {
+    input: [1, 2, 3, 4, 5, 6, 7],
+    expected: TreeNode.fromArray([4, 2, 6, 1, 3, 5, 7]),
+  },
+  {
+    input: [1, 2, 3, 4, 5, 6, 7, 8],
+    expected: TreeNode.fromArray([5, 3, 7, 2, 4, 6, 8, 1]),
+  },
+  {
+    input: [-18, -14, -10, -3, 0, 1],
+    expected: TreeNode.fromArray([-3, -14, 1, -18, -10, 0]),
+  },
+];
+
+export const levelOrderTest = [
+  { input: [3, 9, 20, null, null, 15, 7], expected: [[3], [9, 20], [15, 7]] },
+  { input: [1], expected: [[1]] },
+  { input: [0, -3, 9, -10, null, 5], expected: [[0], [-3, 9], [-10, 5]] },
+];
