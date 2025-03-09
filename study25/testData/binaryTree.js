@@ -208,7 +208,18 @@ export const sortedArrayToBSTTest = [
 ];
 
 export const levelOrderTest = [
-  { input: [3, 9, 20, null, null, 15, 7], expected: [[3], [9, 20], [15, 7]] },
-  { input: [1], expected: [[1]] },
-  { input: [0, -3, 9, -10, null, 5], expected: [[0], [-3, 9], [-10, 5]] },
+  { input: TreeNode.fromArray([]), expected: [] },
+  {
+    input: TreeNode.fromArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    expected: [[1], [2, 3], [4, 5, 6, 7], [8, 9, 10]],
+  },
+  {
+    input: TreeNode.fromArray([3, 9, 20, null, null, 15, 7]),
+    expected: [[3], [9, 20], [15, 7]],
+  },
+  { input: TreeNode.fromArray([1]), expected: [[1]] },
+  {
+    input: TreeNode.fromArray([0, -3, 9, -10, null, 5]),
+    expected: [[0], [-3, 9], [-10, 5]],
+  },
 ];
